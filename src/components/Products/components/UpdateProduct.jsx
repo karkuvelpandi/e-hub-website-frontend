@@ -84,7 +84,7 @@ const Edit = () => {
                                         <div className="form-group">
                                             <input type="text" name="info" value={selectedproduct.info} placeholder='Information' className='form-control' onChange={changeInput} />
                                         </div>
-                                        <input type="submit" value="Create Product" className='btn btn-dark' />
+                                        <input type="submit" value="Update Product" className='btn btn-dark' />
                                     </form>
                                 </div>
                             </div>
