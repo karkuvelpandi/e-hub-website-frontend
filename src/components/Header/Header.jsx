@@ -32,6 +32,7 @@ const Header = () => {
             <img key={index} src={img} alt="" />
             <div className=" bg-gradient-to-b from-transparent to-white absolute inset-0" />
             <h1>New content</h1>
+            <h2>From develop</h2>
          </div>
       ))
    }
