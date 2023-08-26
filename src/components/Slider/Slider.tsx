@@ -1,5 +1,13 @@
-import React, { cloneElement, useState, useEffect } from "react";
-
+import React, { useState, useEffect, ReactNode } from "react";
+type SliderProps = {
+  children: ReactNode[];
+  sliderClass: string;
+  dotClass: string;
+  dotColor: string;
+  dotContainerClass: string;
+  dots: boolean;
+  arrow: boolean;
+};
 export const Slider = ({
   children,
   sliderClass = "",
@@ -8,22 +16,23 @@ export const Slider = ({
   dotContainerClass = "",
   dots = false,
   arrow = false,
-}) => {
+}: SliderProps) => {
   const [activeTab, setActiveTab] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveTab((prevTab) => (prevTab + 1) % children.length);
-    }, 3000);
-    console.log("test");
-
+    let interval: NodeJS.Timeout;
+    if (children) {
+      interval = setInterval(() => {
+        setActiveTab((prevTab) => (prevTab + 1) % children.length);
+      }, 3000);
+    }
     return () => {
       clearInterval(interval);
     };
-  }, [activeTab]);
+  }, [activeTab, children]);
 
   const handleScrollLeft = () => {
-    if (activeTab === 0) {
+    if (activeTab === 0 && children) {
       setActiveTab(children.length - 1);
     } else setActiveTab((prevTab) => prevTab - 1);
   };
@@ -35,27 +44,27 @@ export const Slider = ({
   if (!children) return null;
   return (
     <>
-      <div className="w-full h-auto">
-        {children.map((child, index) => {
+      <div className={`${sliderClass} w-full`}>
+        {children.map((child: ReactNode, index: number) => {
           return <div key={index}>{index === activeTab ? child : null}</div>;
         })}
       </div>
       {arrow && (
-        <div>
+        <>
           <button
-            className="rounded-full w-8 h-8 absolute left-2 sm:left-5 top-28 sm:top-32 z-20 hover:bg-blue-300 active:bg-blue-500 border-white text-white border-2 active:translate-y-1"
+            className="rounded-full w-8 h-8 absolute left-2 sm:left-5 top-[calc(50%-1rem)] sm:top-[calc(50%-1rem)]  z-20 hover:bg-blue-300 active:bg-blue-500 border-white text-white border-2 active:translate-y-1"
             onClick={handleScrollLeft}
           >
             &#129032;
           </button>
 
           <button
-            className="rounded-full w-8 h-8 absolute right-2 sm:right-5 sm:top-32 top-28 z-20 hover:bg-blue-300 active:bg-blue-500  border-white text-white border-2 active:translate-y-1"
+            className="rounded-full w-8 h-8 absolute right-2 sm:right-5 top-[calc(50%-1rem)] sm:top-[calc(50%-1rem)] z-20 hover:bg-blue-300 active:bg-blue-500  border-white text-white border-2 active:translate-y-1"
             onClick={handleScrollRight}
           >
             &#129034;
           </button>
-        </div>
+        </>
       )}
       <div />
       <div className={dotContainerClass}>
