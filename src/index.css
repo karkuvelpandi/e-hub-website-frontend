@@ -8,6 +8,36 @@
     box-sizing: border-box;
 }
 
+#root {
+    height: 100vh;
+    height: calc(var(--vh) * 100);
+}
+
+/* Hiding the scrollbar */
+html {
+    overflow: scroll;
+    scrollbar-width: none !important;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+    scrollbar-width: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 body {
     width: 100%;
 }
