@@ -41,10 +41,6 @@
 }
 
 .nav-link-li:hover {
-    color: rgb(0, 0, 255);
+    color: white;
     text-decoration: none;
-}
-
-li {
-    padding: 0 10px;
 }
