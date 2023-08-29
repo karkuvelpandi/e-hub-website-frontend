@@ -17,7 +17,7 @@ export const ApplicationRoutes = () => {
   const commonPages = [
     <HomePage path="/" />,
     <ContactPage path="/contact" />,
-    <Products path="/product" />,
+    <Products path="/products" />,
     <CreateProduct path="/createProduct" />,
     <ProductAdmin path="/productAdmin" />,
     <UpdateProduct path="/updateProduct/:id" />,
