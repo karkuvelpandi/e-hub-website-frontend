@@ -2,13 +2,13 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 interface VisibilityState {
   isMobileView: boolean;
-  isSidebarVisible: boolean;
+  isCategoryBarVisible: boolean;
   authModalVisibility: "hidden" | "visible";
 }
 
 const initialState: VisibilityState = {
   isMobileView: false,
-  isSidebarVisible: false,
+  isCategoryBarVisible: false,
   authModalVisibility: "hidden",
 };
 
@@ -22,8 +22,8 @@ const visibilitySlice = createSlice({
     switchMobileView: (state, action: PayloadAction<boolean>) => {
       state.isMobileView = action.payload;
     },
-    updateSidebarVisibility: (state, action: PayloadAction<boolean>) => {
-      state.isSidebarVisible = action.payload;
+    updateCategoryBarVisibility: (state, action: PayloadAction<boolean>) => {
+      state.isCategoryBarVisible = action.payload;
     },
   },
   extraReducers(builder) {},
@@ -32,6 +32,6 @@ const visibilitySlice = createSlice({
 export const {
   setAuthModalVisibility,
   switchMobileView,
-  updateSidebarVisibility,
+  updateCategoryBarVisibility,
 } = visibilitySlice.actions;
 export default visibilitySlice.reducer;
