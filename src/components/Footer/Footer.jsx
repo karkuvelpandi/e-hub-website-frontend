@@ -3,15 +3,15 @@ import "./Footer.css"
 const Footer = () => {
   return <>
     <div className='footer-bg relative bottom-0'>
-      <div className="flex flex-col sm:flex-row justify-around p-10 gap-5">
-        <div className="">
+      <div className="w-full flex flex-col sm:flex-row justify-around p-10 gap-5">
+        <div className="sm:w-1/2">
           <div className="font-semibold italic">ABOUT US</div>
           <div className="">
             Welcome to e-Hub, your one-stop destination for all things electronic! Explore a world of cutting-edge technology and innovative gadgets right at your fingertips. With a vast array of products ranging from smartphones and laptops to home appliances and entertainment systems, e-Hub brings the future of electronics to your doorstep.
           </div>
         </div>
 
-        <div className="">
+        <div className="sm:w-1/2">
           <div className="font-semibold italic">ADDRESS</div>
           <div className="">
             <p>Tech Park, 1st Floor, Hosur Rd,

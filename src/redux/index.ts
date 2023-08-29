@@ -1,20 +1,17 @@
 import createSagaMiddleware from "redux-saga";
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import rootSaga from "./sagas";
 import appSlice from "./app.slice";
 import visibilitySlice from "./visibility.slice";
+import productSlice from "../components/Products/product.slice";
+
 const sagaMiddleware = createSagaMiddleware();
-const middleware = [
-  ...getDefaultMiddleware({
-    immutableCheck: false,
-    serializableCheck: false,
-  }),
-  sagaMiddleware,
-];
+const middleware = [sagaMiddleware];
 const store = configureStore({
   reducer: {
     app: appSlice,
     visibility: visibilitySlice,
+    product: productSlice,
   },
   middleware,
   //   devTools:,
