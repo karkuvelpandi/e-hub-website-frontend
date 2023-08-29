@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./common/HomePage";
 import ContactPage from "./common/ContactPage";
 import LogIn from "../components/User/LogIn/LogIn";
-import Products from "../components/Products/Products";
+import Products from "../components/Products";
 import RegForm from "../components/User/RegForm/RegForm";
 import EditForm from "../components/User/EditForm/EditForm";
 import UserAdmin from "../components/User/UserAdmin/UserAdmin";

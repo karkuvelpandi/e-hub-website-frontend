@@ -27,7 +27,7 @@ export const SearchBar = (props: SearchBarProps) => {
     <div className="flex gap-2 h-10 w-full">
       <input
         type="text"
-        placeholder="Search contact..."
+        placeholder="Search product..."
         className="outline-none px-2 h-10 w-full"
         onChange={(e) => setSearchName(e.target.value)}
         // onFocus={() => setAllContacts(availableContacts)}

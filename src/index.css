@@ -64,6 +64,18 @@ body {
     }
 }
 
+.loader-bg {
+    background: linear-gradient(90deg, #e8e8e8 10%, #f1f1f1 20%, #e9e9e9 35%);
+    background-size: 200% 100%;
+    animation: 1s shine linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position-x: -200%;
+    }
+}
+
 /* Page landing animations */
 
 .pageFadeIn {

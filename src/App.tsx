@@ -6,6 +6,7 @@ import { RootState } from "./redux";
 import { useDispatch, useSelector } from "react-redux";
 import { useWindowSize } from "./hooks/useWindowSize";
 import { switchMobileView } from "./redux/visibility.slice";
+import { getAllProduct } from "./components/Products/product.slice";
 
 const App = () => {
   const [showBadge, setShowBadge] = useState<boolean>(false);
@@ -16,6 +17,10 @@ const App = () => {
     (state: RootState) => state.visibility.isMobileView
   );
   const isOffline = useSelector((state: RootState) => state.app.isOffline);
+
+  useEffect(() => {
+    dispatch(getAllProduct());
+  }, []);
 
   // Updating Network availability while loading the app
   useEffect(() => {
