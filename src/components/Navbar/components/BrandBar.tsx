@@ -35,7 +35,7 @@ export const BrandBar = () => {
     setDropdownUser(false);
   };
   return (
-    <nav className="w-full bg-blue-500 flex justify-between sm:pl-10 pl-2 pr-4 sm:sticky sm:top-0 sm:inset-x-0 sm:z-30">
+    <nav className=" bg-blue-500 flex justify-between pl-4 pr-4 sm:sticky sm:top-0 sm:inset-x-0 sm:z-30">
       <div className="flex ">
         {isMobileView && (
           <div className=" flex items-center px-2 ">
