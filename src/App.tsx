@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ApplicationRoutes } from "./Pages";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar";
 import { setAppOffline } from "./redux/app.slice";
 import { RootState } from "./redux";
 import { useDispatch, useSelector } from "react-redux";
