@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ApplicationRoutes } from "./Pages";
+import { ApplicationRoutes } from "./Pages/index";
 import Navbar from "./components/Navbar";
 import { setAppOffline } from "./redux/app.slice";
 import { RootState } from "./redux";
@@ -62,7 +62,7 @@ const App = () => {
   return (
     <>
       <div
-        className={` transition-transform duration-100 animate-pulse fixed bottom-2 left-10 z-50 inline-block p-2 px-4 text-white rounded-lg ${
+        className={` transition-transform duration-100 animate-pulse fixed bottom-3 left-5 sm:left-10 z-50 inline-block p-2 px-4 text-white rounded-lg ${
           isOffline ? "bg-red-600" : "bg-green-600"
         }
           ${showBadge ? "translate-x-0" : "-translate-x-36"}

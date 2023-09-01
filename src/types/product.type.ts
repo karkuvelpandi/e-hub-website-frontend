@@ -4,6 +4,7 @@ export interface CreateProduct {
   info: string;
   price: number;
   qty: number;
+  category: string;
 }
 
 export interface GetProduct {
@@ -13,6 +14,7 @@ export interface GetProduct {
   info: string;
   price: number;
   qty: number;
+  category: any;
 }
 
 export interface UpdateProductData {
@@ -23,4 +25,9 @@ export interface UpdateProductData {
 export interface AddProductData {
   postData: CreateProduct;
   data: any;
+}
+
+export interface CategoryUpdatePayload {
+  category: string;
+  title: string;
 }

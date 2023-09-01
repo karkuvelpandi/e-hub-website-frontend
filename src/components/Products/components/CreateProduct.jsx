@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import Axios from 'axios'
 import { Navigate } from 'react-router-dom'
+import { categories } from '../Category'
 
 const CreateProduct = () => {
     let [product, setProduct] = useState({
@@ -12,7 +13,7 @@ const CreateProduct = () => {
         info: ""
     })
     let [submitted, setSubmitted] = useState(false)
-    
+
     let productData = (event) => {
         setProduct({
             ...product,
@@ -22,25 +23,25 @@ const CreateProduct = () => {
 
     let submitHandler = (event) => {
         event.preventDefault();
-        let url ="https://cute-hare-attire.cyclic.app/product/create" 
+        let url = "https://cute-hare-attire.cyclic.app/product/create"
         Axios.post(url, product).then((res) => {
             setSubmitted(true)
             console.log(url)
-        }).catch(() => { })    
+        }).catch(() => { })
     }
 
     let changeImage = (event) => {
         let imageFile = event.target.files[0]
-        let reader = new FileReader()    
+        let reader = new FileReader()
         reader.readAsDataURL(imageFile)
         reader.addEventListener("load", () => {
             if (reader.result) {
-               /*  console.log(reader.result) */
+                /*  console.log(reader.result) */
                 setProduct({ ...product, image: reader.result })
             }
         })
     }
-   
+
     return <>
         <div className="container mt-5">
             {/* <pre>{JSON.stringify(product)}</pre>
@@ -67,6 +68,17 @@ const CreateProduct = () => {
                                         </div>
                                         <div className="form-group">
                                             <input type="text" name="info" placeholder='Information' className='form-control' onChange={productData} />
+                                        </div>
+                                        <div className="form-group w-full">
+                                            <select name="category" id="" onChange={productData}>
+                                                <option value="">Select product</option>
+                                                {
+                                                    categories.map((category) => {
+                                                        if (category.categoryName)
+                                                            return <option value={category.categoryName}>{category.title}</option>
+                                                    })
+                                                }
+                                            </select>
                                         </div>
                                         <input type="submit" value="Create Product" className='btn btn-warning' />
                                     </form>
