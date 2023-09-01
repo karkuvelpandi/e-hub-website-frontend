@@ -18,3 +18,13 @@ export enum AsyncState {
   FULFILLED = "fulfilled",
   REJECTED = "rejected",
 }
+
+export enum CategoryState {
+  HOME = "hone",
+  KITCHEN = "kitchen",
+  AUDIO_VIDEO = "audio-video",
+  GADGETS = "gadgets",
+  MOBILES = "mobiles",
+  NEW_ARRIVAL = "new",
+  TODAY_DEAL = "today-deal",
+}

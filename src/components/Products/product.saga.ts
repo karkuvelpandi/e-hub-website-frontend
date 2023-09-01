@@ -2,11 +2,7 @@ import { put, call, takeLatest } from "redux-saga/effects";
 import { ActionState } from "../../types";
 import { PayloadAction } from "@reduxjs/toolkit";
 import * as API from "../../api/product.service";
-import {
-  CreateProduct,
-  GetProduct,
-  UpdateProductData,
-} from "../../types/product.type";
+import { CreateProduct, UpdateProductData } from "../../types/product.type";
 export const Actions = {
   addProduct: "product/add-product ",
   getAllProduct: "product/get-all-product ",
