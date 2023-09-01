@@ -10,14 +10,15 @@ import UserAdmin from "../components/User/UserAdmin/UserAdmin";
 import ProductAdmin from "../components/Products/components/ProductAdmin";
 import UpdateProduct from "../components/Products/components/UpdateProduct";
 import CreateProduct from "../components/Products/components/CreateProduct";
+import { ProductPage } from "../components/Products/ProductPage";
 /**
  * Component to separate all routes form App.js to achieve cleaner code and easy to modify in future.
  */
 export const ApplicationRoutes = () => {
   const commonPages = [
     <HomePage path="/" />,
-    <ContactPage path="/contact" />,
-    <Products path="/products" />,
+    <Products path="/products/*" />,
+    <ProductPage path="/:product_name/:product_id" />,
     <CreateProduct path="/createProduct" />,
     <ProductAdmin path="/productAdmin" />,
     <UpdateProduct path="/updateProduct/:id" />,
@@ -25,6 +26,7 @@ export const ApplicationRoutes = () => {
     <RegForm path="/regForm" />,
     <UserAdmin path="/userAdmin" />,
     <EditForm path="/editForm/:id" />,
+    <ContactPage path="/contact" />,
   ];
 
   return (

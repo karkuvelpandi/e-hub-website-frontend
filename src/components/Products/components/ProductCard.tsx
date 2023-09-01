@@ -1,5 +1,6 @@
 import React from "react";
 import { GetProduct } from "../../../types/product.type";
+import { useNavigate } from "react-router-dom";
 
 type ProductCardProps = {
   index: number;
@@ -7,8 +8,13 @@ type ProductCardProps = {
 };
 
 export const ProductCard = ({ index, product }: ProductCardProps) => {
+  const navigate = useNavigate();
   return (
-    <div key={index} className="flex flex-col w-72 cursor-pointer px-2 py-4">
+    <div
+      key={index}
+      className="flex flex-col w-72 cursor-pointer px-2 py-4"
+      onClick={() => navigate(`/${product.name}/${product._id}`)}
+    >
       <div className="flex justify-center items-center bg-slate-100 h-56">
         <img src={product.image} className="productImg" alt="" />
       </div>
